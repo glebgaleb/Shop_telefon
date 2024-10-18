@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Замовлення - Магазин Телефонів</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Логотип" class="logo-img"> <!-- Замените на путь к вашему логотипу -->
+            <h1 class="logo-text">Магазин Телефонів</h1>
+        </div>
+        <nav class="navbar">
+            <button onclick="navigateTo('index')" class="nav-button">Головна</button>
+            <button onclick="navigateTo('products')" class="nav-button">Товари</button>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Замовлення</h2>
+        <div class="order-form">
+            <label for="product">Виберіть товар:</label>
+            <select id="product">
+                <option value="iPhone 14">iPhone 14</option>
+                <option value="Samsung Galaxy S21">Samsung Galaxy S21</option>
+                <option value="Xiaomi Mi 11">Xiaomi Mi 11</option>
+                <option value="Google Pixel 6">Google Pixel 6</option>
+                <option value="OnePlus 9">OnePlus 9</option>
+                <option value="Huawei P50">Huawei P50</option>
+            </select>
+
+            <label for="color">Виберіть колір:</label>
+            <select id="color">
+                <option value="Чорний">Чорний</option>
+                <option value="Білий">Білий</option>
+                <option value="Синій">Синій</option>
+                <option value="Червоний">Червоний</option>
+            </select>
+
+            <label for="quantity">Кількість:</label>
+            <input type="number" id="quantity" value="1" min="1">
+
+            <button class="order-button" onclick="submitOrder()">Замовити</button>
+        </div>
+
+        <button class="back-button" onclick="navigateTo('products')">Назад</button>
+    </main>
+
+    <footer>
+        <p>© 2024 Магазин Телефонів. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page + '.html'; // Переход на іншу сторінку
+        }
+
+        function submitOrder() {
+            const product = document.getElementById('product').value;
+            const color = document.getElementById('color').value;
+            const quantity = document.getElementById('quantity').value;
+
+            alert(`Ваше замовлення на ${quantity} ${product} кольору ${color} успішно оформлено!`);
+        }
+    </script>
+</body>
+</html>

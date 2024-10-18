@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головна - Магазин Телефонів</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Логотип" class="logo-img"> <!-- Замените на путь к вашему логотипу -->
+            <h1 class="logo-text">Магазин Телефонів</h1>
+        </div>
+        <nav class="navbar">
+            <button onclick="navigateTo('products')" class="nav-button">Товари</button>
+            <button onclick="navigateTo('about')" class="nav-button">Про нас</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <h2 class="welcome-heading">Ласкаво просимо до нашого магазину телефонів!</h2>
+        </section>
+
+        <section class="reviews-section">
+            <h2>Відгуки наших клієнтів</h2>
+            <div class="review-card">
+                <p>Найкращий магазин! Купив iPhone, і він працює бездоганно.</p>
+                <span class="rating">⭐⭐⭐⭐⭐</span>
+            </div>
+            <div class="review-card">
+                <p>Відмінний сервіс і швидка доставка. Дуже задоволений покупкою.</p>
+                <span class="rating">⭐⭐⭐⭐</span>
+            </div>
+            <div class="review-card">
+                <p>Придбав Samsung Galaxy. Все супер, рекомендую!</p>
+                <span class="rating">⭐⭐⭐⭐⭐</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Магазин Телефонів. Всі права захищені.</p>
+    </footer>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = page + '.html'; // Переход на іншу сторінку
+        }
+    </script>
+</body>
+</html>
