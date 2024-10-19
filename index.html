@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Головна - Магазин Телефонів</title>
+    <title>Магазин Телефонів</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="logo.png" alt="Логотип" class="logo-img"> <!-- Замените на путь к вашему логотипу -->
+            <img src="logo.png" alt="Логотип" class="logo-img">
             <h1 class="logo-text">Магазин Телефонів</h1>
         </div>
         <nav class="navbar">
-            <button onclick="navigateTo('products')" class="nav-button">Товари</button>
+            <button onclick="navigateTo('index')" class="nav-button">Головна</button>
             <button onclick="navigateTo('about')" class="nav-button">Про нас</button>
         </nav>
     </header>
@@ -23,26 +23,47 @@
             <h2 class="welcome-heading">Ласкаво просимо до нашого магазину телефонів!</h2>
         </section>
 
-        <section class="reviews-section">
-            <h2>Відгуки наших клієнтів</h2>
-            <div class="review-card">
-                <p>Найкращий магазин! Купив iPhone, і він працює бездоганно.</p>
-                <span class="rating">⭐⭐⭐⭐⭐</span>
+        <section class="products-section">
+            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+                <img src="iphone.png" alt="iPhone 13" class="product-image">
+                <h3>iPhone 13</h3>
+                <p class="price">$999</p>
+                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
-            <div class="review-card">
-                <p>Відмінний сервіс і швидка доставка. Дуже задоволений покупкою.</p>
-                <span class="rating">⭐⭐⭐⭐</span>
+            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+                <img src="samsung.webp" alt="Samsung Galaxy S21" class="product-image samsung-image">
+                <h3>Samsung Galaxy S21</h3>
+                <p class="price">$799</p>
+                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
-            <div class="review-card">
-                <p>Придбав Samsung Galaxy. Все супер, рекомендую!</p>
-                <span class="rating">⭐⭐⭐⭐⭐</span>
+            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+                <img src="pixel.jpg" alt="Google Pixel 6" class="product-image">
+                <h3>Google Pixel 6</h3>
+                <p class="price">$599</p>
+                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
+            </div>
+            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+                <img src="oneplus.jpg" alt="OnePlus 9" class="product-image">
+                <h3>OnePlus 9</h3>
+                <p class="price">$729</p>
+                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
+            </div>
+            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+                <img src="xiaomi.jpg" alt="Xiaomi Mi 11" class="product-image">
+                <h3>Xiaomi Mi 11</h3>
+                <p class="price">$749</p>
+                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
+            </div>
+            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
+                <img src="nokia.jpg" alt="Nokia 8.3" class="product-image">
+                <h3>Nokia 8.3</h3>
+                <p class="price">$499</p>
+                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <p>© 2024 Магазин Телефонів. Всі права захищені.</p>
-    </footer>
+        <button class="back-button" onclick="navigateTo('index')">Назад</button>
+    </main>
 
     <script>
         function navigateTo(page) {
@@ -51,3 +72,4 @@
     </script>
 </body>
 </html>
+
