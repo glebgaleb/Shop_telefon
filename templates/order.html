@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Замовлення - Магазин Телефонів</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="logo.png" alt="Логотип" class="logo-img"> <!-- Замените на путь к вашему логотипу -->
+            <img src="{{url_for('static', filename='img/logo.png')}}" alt="Логотип" class="logo-img"> <!-- Замените на путь к вашему логотипу -->
             <h1 class="logo-text">Магазин Телефонів</h1>
         </div>
         <nav class="navbar">

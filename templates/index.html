@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Магазин Телефонів</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='styles/style.css')}}">
+    <script>function about(){window.location.href="{{url_for('about')}}";}</script>
+    <script>function home1(){window.location.href="{{url_for('home')}}";}</script>
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <img src="logo.png" alt="Логотип" class="logo-img">
+            <img src="{{url_for('static', filename='img/logo.png')}}" alt="Логотип" class="logo-img">
             <h1 class="logo-text">Магазин Телефонів</h1>
         </div>
         <nav class="navbar">
-            <button onclick="navigateTo('index')" class="nav-button">Головна</button>
-            <button onclick="navigateTo('about')" class="nav-button">Про нас</button>
+            <button onclick="home1()" class="nav-button">Головна</button>
+            <button onclick="about()" class="nav-button">Про нас</button>
         </nav>
     </header>
 
