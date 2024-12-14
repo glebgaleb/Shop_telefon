@@ -13,8 +13,8 @@
             <h1 class="logo-text">Магазин Телефонів</h1>
         </div>
         <nav class="navbar">
-            <button onclick="navigateTo('index')" class="nav-button">Головна</button>
-            <button onclick="navigateTo('products')" class="nav-button">Товари</button>
+            <a href="{{ url_for('index') }}" class="nav-button">Головна</a>
+            <a href="{{ url_for('about') }}" class="nav-button">Про нас</a>
         </nav>
     </header>
 
