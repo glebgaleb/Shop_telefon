@@ -24,42 +24,7 @@
         </section>
 
         <section class="products-section">
-            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
-                <img src="iphone.png" alt="iPhone 13" class="product-image">
-                <h3>iPhone 13</h3>
-                <p class="price">$999</p>
-                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
-            </div>
-            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
-                <img src="samsung.webp" alt="Samsung Galaxy S21" class="product-image samsung-image">
-                <h3>Samsung Galaxy S21</h3>
-                <p class="price">$799</p>
-                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
-            </div>
-            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
-                <img src="pixel.jpg" alt="Google Pixel 6" class="product-image">
-                <h3>Google Pixel 6</h3>
-                <p class="price">$599</p>
-                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
-            </div>
-            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
-                <img src="vivo.jpg" alt="Vivo x100 ultra" class="product-image">
-                <h3>Vivo x100 ultra</h3>
-                <p class="price">$729</p>
-                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
-            </div>
-            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
-                <img src="samsungs24.jpg" alt="samsung s24" class="product-image">
-                <h3>samsung s24</h3>
-                <p class="price">$749</p>
-                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
-            </div>
-            <div class="product-card" onmouseover="this.classList.add('hover-effect')" onmouseout="this.classList.remove('hover-effect')">
-                <img src="iphone.webp" alt="Iphone 16" class="product-image">
-                <h3>Iphone 16</h3>
-                <p class="price">$1500</p>
-                <button class="order-button" onclick="navigateTo('order')">Замовити</button>
-            </div>
+            {% block content %}{% endblock %}
         </section>
 
         <button class="back-button" onclick="navigateTo('index')">Назад</button>

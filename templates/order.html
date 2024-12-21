@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="logo-container">
-            <img src="{{url_for('static', filename='img/logo.png')}}" alt="Логотип" class="logo-img"> <!-- Замените на путь к вашему логотипу -->
+            <img src="{{url_for('static', filename='img/logo.png')}}" alt="Логотип" class="logo-img">
             <h1 class="logo-text">Магазин Телефонів</h1>
         </div>
         <nav class="navbar">
@@ -22,17 +22,21 @@
         <h2>Замовлення</h2>
         <div class="order-form">
             <label for="product">Виберіть товар:</label>
-            <select id="product">
-                <option value="iPhone 14">iPhone 14</option>
+            <select id="product" aria-label="Виберіть товар" onchange="updateDescription()">
+                <option value="iPhone 13">iPhone 13</option>
                 <option value="Samsung Galaxy S21">Samsung Galaxy S21</option>
-                <option value="Xiaomi Mi 11">Xiaomi Mi 11</option>
+                <option value="Vivo x100 ultra">Vivo x100 ultra</option>
                 <option value="Google Pixel 6">Google Pixel 6</option>
-                <option value="OnePlus 9">OnePlus 9</option>
-                <option value="Huawei P50">Huawei P50</option>
+                <option value="Samsung S24">Samsung S24</option>
+                <option value="iPhone 16">iPhone 16</option>
             </select>
 
+            <div id="product-description" class="product-description">
+                <!-- Описание товара будет выводиться здесь -->
+            </div>
+
             <label for="color">Виберіть колір:</label>
-            <select id="color">
+            <select id="color" aria-label="Виберіть колір">
                 <option value="Чорний">Чорний</option>
                 <option value="Білий">Білий</option>
                 <option value="Синій">Синій</option>
@@ -40,7 +44,7 @@
             </select>
 
             <label for="quantity">Кількість:</label>
-            <input type="number" id="quantity" value="1" min="1">
+            <input type="number" id="quantity" value="1" min="1" aria-label="Кількість товару">
 
             <button class="order-button" onclick="submitOrder()">Замовити</button>
         </div>
@@ -48,19 +52,66 @@
         <button class="back-button" onclick="navigateTo('products')">Назад</button>
     </main>
 
-
     <script>
-        function navigateTo(page) {
-            window.location.href = page + '.html'; // Переход на іншу сторінку
+        // Обновление описания в зависимости от выбранного продукта
+        function updateDescription() {
+            const product = document.getElementById('product').value;
+            const descriptionDiv = document.getElementById('product-description');
+
+            let description = '';
+
+            switch (product) {
+                case 'iPhone 13':
+                    description = '<p><strong>iPhone 13</strong> - новий смартфон від Apple з покращеною камерою, A15 Bionic чіпом та підтримкою 5G.</p>';
+                    break;
+                case 'Samsung Galaxy S21':
+                    description = '<p><strong>Samsung Galaxy S21</strong> - потужний смартфон з екраном 120 Гц, камерою на 64 МП і підтримкою 5G.</p>';
+                    break;
+                case 'Vivo x100 ultra':
+                    description = '<p><strong>Vivo x100 ultra</strong> - смартфон з дисплеєм AMOLED, процесором Snapdragon 888 і камерою 108 МП.</p>';
+                    break;
+                case 'Google Pixel 6':
+                    description = '<p><strong>Google Pixel 6</strong> - смартфон з інтелектуальною камерою та найновішою версією Android.</p>';
+                    break;
+                case 'Samsung S24':
+                    description = '<p><strong>Samsung S24</strong> - смартфон з потужним процесором, екраном Fluid AMOLED і підтримкою 5G.</p>';
+                    break;
+                case 'iPhone 16':
+                    description = '<p><strong>iPhone 16</strong> - стильний смартфон з чудовою камерою та підтримкою 4G.</p>';
+                    break;
+                default:
+                    description = '';
+                    break;
+            }
+
+            descriptionDiv.innerHTML = description;
         }
 
+        // Функция для перехода на другую страницу
+        function navigateTo(page) {
+            if (page === 'products' || page === 'index' || page === 'about') {
+                window.location.href = page + '.html';
+            } else {
+                alert('Невірна сторінка!');
+            }
+        }
+
+        // Функция отправки заказа
         function submitOrder() {
             const product = document.getElementById('product').value;
             const color = document.getElementById('color').value;
             const quantity = document.getElementById('quantity').value;
 
+            if (quantity < 1) {
+                alert('Кількість повинна бути хоча б 1.');
+                return;
+            }
+
             alert(`Ваше замовлення на ${quantity} ${product} кольору ${color} успішно оформлено!`);
         }
+
+        // Инициализация описания при загрузке страницы
+        updateDescription();
     </script>
 </body>
 </html>
