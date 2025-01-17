@@ -53,22 +53,19 @@ header {
 }
 
 .nav-button {
-    background-color: white;
-    color: #28a745; /* Яскравий зелений */
-    border: 2px solid #28a745;
-    border-radius: 50%; /* Кругла кнопка */
-    padding: 20px 30px; /* Збільшені відступи для більшої кнопки */
-    margin: 0 15px; /* Збільшені відступи між кнопками */
+    background-color: #155724;
+    color: white;
+    border: none;
+    border-radius: 12px; /* Трішки більше закруглення */
+    padding: 15px 30px; /* Збільшені відступи для більших кнопок */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-    animation: buttonFadeIn 0.5s ease-out 0.5s forwards; /* Анімація для кнопок */
-    font-size: 18px; /* Збільшений шрифт */
-    width: auto; /* Автоматична ширина */
-    height: auto; /* Автоматична висота */
-    display: inline-flex; /* Використання flex для центрованого тексту */
-    align-items: center;
-    justify-content: center;
+    animation: fadeInButton 0.5s ease 0.5s forwards;
+    display: inline-block;
     text-align: center;
+    margin: 0 15px;
+    font-size: 20px; /* Збільшений шрифт */
+    text-decoration: none;
 }
 
 @keyframes buttonFadeIn {
@@ -83,8 +80,7 @@ header {
 }
 
 .nav-button:hover {
-    background-color: #218838; /* Темно-зелений */
-    color: white;
+    background-color: #138496; /* Темно-зелений */
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
@@ -112,7 +108,7 @@ header {
 
 .product-card {
     border: 1px solid #28a745; /* Яскравий зелений */
-    border-radius: 10px; /* Закругляем углы картки */
+    border-radius: 10px; /* Закругляем угли картки */
     padding: 10px; /* Зменшене відступлення */
     text-align: center;
     margin: 10px;
@@ -149,7 +145,7 @@ header {
     width: 100%;
     height: 200px; /* Висота зображення */
     object-fit: contain; /* Зберігаємо пропорції зображення */
-    border-radius: 10px; /* Добавил закругление для картинок */
+    border-radius: 10px; /* Добавив закруглення для картинок */
     transition: transform 0.3s;
 }
 
@@ -167,7 +163,7 @@ header {
     font-size: 0.9em;
     color: #666;
     margin: 10px 0;
-    flex-grow: 1; /* Занять оставшееся пространство */
+    flex-grow: 1; /* Заняття залишеного простору */
 }
 
 div.product-card img {
@@ -180,14 +176,15 @@ div.product-card img {
     background-color: #155724; /* Темно-зелений */
     color: white;
     border: none;
-    border-radius: 10px; /* Закругленные углы кнопки */
-    padding: 10px 20px; /* Зменшене відступлення зліва та справа для компактності */
+    border-radius: 10px; /* Закруглені кути кнопки */
+    padding: 10px 20px; /* Зменшені відступи зліва та справа для компактності */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     animation: fadeInButton 0.5s ease 0.5s forwards; /* Анімація для кнопки замовлення */
     display: inline-block;
     text-align: center;
     margin-top: 10px; /* Відступ зверху, щоб кнопка була ближче до картки */
+    text-decoration: none
 }
 
 @keyframes fadeInButton {
@@ -205,23 +202,23 @@ div.product-card img {
     background-color: #138496; /* Темно-зелений */
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none
 }
 
-/* Обновляем рамку для экрана заказа */
+/* Оновлений стиль рамки для екрану замовлення */
 .order-screen {
-    border: 3px solid #28a745; /* Зеленая рамка */
-    border-radius: 15px; /* Закругленные углы */
-    padding: 20px; /* Внутренние отступы */
-    background-color: white; /* Белый фон */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Легкая тень */
-    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Плавные анимации */
-    opacity: 0; /* Изначально невидим */
-    animation: fadeInOrderScreen 1s ease-out 0.5s forwards; /* Анімація для екрану замовлення */
+    border: 2px solid #28a745; /* Зелене обрамлення */
+    border-radius: 8px; /* Невелике заокруглення */
+    padding: 20px; /* Внутрішні відступи */
+    background-color: #f8f9fa; /* Світлий фон для контрасту */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Легка тінь */
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Плавні анімації */
+    opacity: 0; /* Спочатку невидимий */
+    animation: fadeInOrderScreen 1s ease-out 0.5s forwards; /* Анімація для появи */
     width: 80%; /* Установлена ширина */
-    margin: 20px auto; /* Центрирование контейнера */
+    margin: 20px auto; /* Центрування контейнера */
 }
 
-/* Анімація для плавного появления экрана заказа */
 @keyframes fadeInOrderScreen {
     from {
         opacity: 0;
@@ -234,8 +231,8 @@ div.product-card img {
 }
 
 .order-screen:hover {
-    transform: scale(1.02); /* Немного увеличиваем экран заказа при наведении */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Усиленная тень */
+    transform: scale(1.02); /* Трохи збільшуємо екран при наведенні */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15); /* Посилена тінь */
 }
 
 .back-button {
@@ -243,10 +240,12 @@ div.product-card img {
     color: white;
     border: none;
     border-radius: 5px; /* Прямокутна форма */
-    padding: 10px 20px; /* Відстуи для зручності */
+    padding: 10px 20px; /* Відступи для зручності */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
     position: fixed;
     bottom: 20px;
     left: 20px;
-    animation: fadeInButton 0.5s ease 1s forwards; /* А
+    animation: fadeInButton 0.5s ease 1s forwards; /* Анімація для кнопки назад */
+    text-decoration: none
+}
